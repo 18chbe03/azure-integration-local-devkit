@@ -1,0 +1,20 @@
+# Local settings/secrets
+local.settings.json
+.env
+*.Development.json
+
+# .NET
+bin/
+obj/
+.vs/
+.vscode/.ropeproject/
+TestResults/
+
+# Logic Apps local runtime
+.artifacts/
+.workflow_designtime/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/

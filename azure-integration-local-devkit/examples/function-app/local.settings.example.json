@@ -1,0 +1,18 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureWebJobsSecretStorageType": "files",
+
+    "ServiceBusConnection": "Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;",
+    "ServiceBusAdministrationConnection": "Endpoint=sb://localhost:5300;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;",
+
+    "ExternalApi__BaseUrl": "http://localhost:8081",
+    "ExternalApi__ApiKey": "local-dev-key",
+
+    "BlobStorageConnection": "UseDevelopmentStorage=true",
+    "TableStorageConnection": "UseDevelopmentStorage=true",
+    "QueueName": "local.integration.input"
+  }
+}
