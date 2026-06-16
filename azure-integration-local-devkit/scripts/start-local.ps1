@@ -1,16 +1,12 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-Write-Host "Starting local Azure integration devkit..."
+$repoRoot = Split-Path -Parent $PSScriptRoot
+Set-Location $repoRoot
+
+Write-Host "Starting local Azure integration dependencies..."
 docker compose up -d
 
 Write-Host ""
-Write-Host "Waiting a few seconds before health checks..."
-Start-Sleep -Seconds 10
-
-Write-Host "WireMock health:"
-try { Invoke-RestMethod "http://localhost:8081/health" | ConvertTo-Json } catch { Write-Warning $_ }
-
-Write-Host ""
-Write-Host "Service Bus Emulator health:"
-try { Invoke-RestMethod "http://localhost:5300/health" | ConvertTo-Json } catch { Write-Warning $_ }
+Write-Host "Started. Run this to verify:"
+Write-Host "  .\scripts\Test-LocalEnvironment.ps1"

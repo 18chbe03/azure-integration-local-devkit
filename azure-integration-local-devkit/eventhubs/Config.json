@@ -1,0 +1,31 @@
+{
+  "UserConfig": {
+    "NamespaceConfig": [
+      {
+        "Type": "EventHub",
+        "Name": "emulatorNs1",
+        "Entities": [
+          {
+            "Name": "nodinite-local",
+            "PartitionCount": "2",
+            "ConsumerGroups": [
+              { "Name": "$Default" },
+              { "Name": "local-dev" }
+            ]
+          },
+          {
+            "Name": "local.integration.events",
+            "PartitionCount": "2",
+            "ConsumerGroups": [
+              { "Name": "$Default" },
+              { "Name": "local-dev" }
+            ]
+          }
+        ]
+      }
+    ],
+    "LoggingConfig": {
+      "Type": "Console"
+    }
+  }
+}

@@ -7,7 +7,9 @@ This repo is intended to help developers run and test Azure integration flows lo
 ## Includes
 
 - Azurite for local Blob, Queue and Table Storage
-- Azure Service Bus Emulator for local queues/topics
+- Azure Service Bus Emulator for local queues/topics/subscriptions
+- Azure Event Hubs Emulator for local Event Hub producer/consumer tests
+- Azurite for Blob/Queue/Table Storage
 - WireMock for mocked external APIs
 - Optional YARP-based APIM mock/proxy
 - Example local settings for Azure Functions and Logic Apps Standard
@@ -48,6 +50,9 @@ curl http://localhost:8081/health
 | WireMock | http://localhost:8081 |
 | Service Bus Emulator health | http://localhost:5300/health |
 | Service Bus Emulator AMQP | localhost:5672 |
+| Event Hubs Emulator health | http://localhost:5301/health |
+| Event Hubs Emulator AMQP | localhost:5673 |
+| Event Hubs Emulator Kafka | localhost:9092 |
 | APIM Mock / YARP | http://localhost:8080 |
 
 ## Local connection strings
@@ -98,3 +103,27 @@ For real Azure configuration validation, test in dev/UAT:
 ```text
 APIM Developer -> Function App Dev -> Service Bus Dev -> Storage Dev -> Key Vault Dev
 ```
+
+
+## Run real integrations locally
+
+Start all local dependencies:
+
+```powershell
+.\scripts\start-local.ps1
+.\scripts\Test-LocalEnvironment.ps1
+```
+
+Generate local settings for a Function App:
+
+```powershell
+.\scripts\Install-LocalSettings.ps1 -Integration INT1185 -FunctionAppPath "C:\Dev\INT1185\src\INT1185.Functions"
+```
+
+Initialize Azurite containers/tables/queues if your integration needs them:
+
+```powershell
+.\storage\init-storage.ps1
+```
+
+More details: `docs/running-real-integrations.md`.

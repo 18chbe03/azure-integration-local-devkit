@@ -1,0 +1,24 @@
+{
+  "integrationId": "INT1185",
+  "functionAppPort": 7071,
+  "storage": {
+    "containers": [
+      "int1185-stocklevels"
+    ],
+    "queues": [],
+    "tables": []
+  },
+  "serviceBus": {
+    "queues": [],
+    "topics": []
+  },
+  "eventHubs": [
+    "nodinite-local"
+  ],
+  "externalApis": [
+    {
+      "name": "ivs-pos-api",
+      "localBaseUrl": "http://localhost:8081"
+    }
+  ]
+}

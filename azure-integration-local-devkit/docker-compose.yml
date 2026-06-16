@@ -23,6 +23,28 @@ services:
     command:
       - "--verbose"
 
+  eventhubs-emulator:
+    image: mcr.microsoft.com/azure-messaging/eventhubs-emulator:latest
+    container_name: eventhubs-emulator
+    pull_policy: always
+    ports:
+      - "5673:5672"   # AMQP, host port changed to avoid Service Bus conflict
+      - "9092:9092"   # Kafka endpoint
+      - "5301:5300"   # Management/health, host port changed to avoid Service Bus conflict
+    volumes:
+      - ./eventhubs/Config.json:/Eventhubs_Emulator/ConfigFiles/Config.json:ro
+    environment:
+      BLOB_SERVER: azurite
+      METADATA_SERVER: azurite
+      ACCEPT_EULA: ${ACCEPT_EULA:-Y}
+    depends_on:
+      - azurite
+    networks:
+      local-devkit:
+        aliases:
+          - eventhubs-emulator
+          - eh-emulator
+
   servicebus-emulator:
     image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
     container_name: servicebus-emulator
