@@ -1,18 +1,27 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsSecretStorageType": "files",
-
+    "ASPNETCORE_ENVIRONMENT": "Development",
+    "DOTNET_ENVIRONMENT": "Development",
+    "NodiniteConfiguration__Enabled": "false",
+    "NodiniteConfiguration__IntId": "INT1186",
+    "NodiniteConfiguration__EndpointUri": "http://localhost:7071/api/contact/info",
+    "NodiniteConfiguration__LogAgentId": "local",
+    "NodiniteConfiguration__MessageType": "ContactInfo.CRM",
+    "NodiniteConfiguration__OriginalMessageTypeName": "ContactInfo.CRM",
+    "NodiniteConfiguration__EndpointDirection": "TwoWaySend",
+    "NodiniteConfiguration__EndpointTypeId": "75",
+    "NodiniteConfiguration__EndPointName": "INT1186_ContactInfo_CRM_LOCAL",
+    "NodiniteConfiguration__EndpointType": "AzureFunctions",
+    "NodiniteConfiguration__EventHubSettings__FullyQualifiedNamespace": "localhost",
+    "NodiniteConfiguration__EventHubSettings__EventHubName": "nodinite-local",
     "ServiceBusConnection": "Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;",
-    "ServiceBusAdministrationConnection": "Endpoint=sb://localhost:5300;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;",
-
     "ExternalApi__BaseUrl": "http://localhost:8081",
-    "ExternalApi__ApiKey": "local-dev-key",
-
-    "BlobStorageConnection": "UseDevelopmentStorage=true",
-    "TableStorageConnection": "UseDevelopmentStorage=true",
-    "QueueName": "local.integration.input"
+    "AdvaniaLogger__CategoriesToLog": "None",
+    "AZURE_FUNCTIONS_ENVIRONMENT": "Development",
+    "MEKO_LOCAL_MODE": "true"
   }
 }
