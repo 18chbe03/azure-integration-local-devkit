@@ -32,7 +32,7 @@ Install these first:
 # Start local infrastructure
 docker compose up -d
 
-# Check containers
+# Check  containers
 docker ps
 
 # Check Service Bus emulator health
