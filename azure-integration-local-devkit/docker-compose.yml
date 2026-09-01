@@ -79,6 +79,15 @@ services:
         aliases:
           - mssql
 
+  sftp:
+    image: atmoz/sftp:latest
+    container_name: local-sftp
+    ports:
+      - "2222:22"
+    volumes:
+      - ./sftp:/home/local/upload
+    command: local:local:1001
+
 networks:
   local-devkit:
 
