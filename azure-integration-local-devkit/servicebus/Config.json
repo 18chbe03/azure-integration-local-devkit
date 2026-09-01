@@ -75,6 +75,26 @@
               }
             }
           ]
+        },
+          {
+          "Name": "sbt-int1177-rategroup",
+          "Properties": {
+            "DefaultMessageTimeToLive": "PT1H",
+            "DuplicateDetectionHistoryTimeWindow": "PT20S",
+            "RequiresDuplicateDetection": false
+          },
+          "Subscriptions": [
+            {
+              "Name": "sbts-int1177-rategroup-intershop",
+              "Properties": {
+                "DeadLetteringOnMessageExpiration": false,
+                "DefaultMessageTimeToLive": "PT1H",
+                "LockDuration": "PT1M",
+                "MaxDeliveryCount": 10,
+                "RequiresSession": false
+              }
+            }
+          ]
         }
         ]
       }
