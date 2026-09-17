@@ -11,6 +11,10 @@ services:
       - "10002:10002" # Table
     volumes:
       - azurite-data:/data
+    networks:
+      local-devkit:
+        aliases:
+          - azurite
 
   wiremock:
     image: wiremock/wiremock:latest
@@ -22,6 +26,8 @@ services:
       - ./mock-api/wiremock/__files:/home/wiremock/__files
     command:
       - "--verbose"
+    networks:
+      - local-devkit
 
   eventhubs-emulator:
     image: mcr.microsoft.com/azure-messaging/eventhubs-emulator:latest
